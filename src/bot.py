@@ -1,8 +1,8 @@
 import os
-import asyncio
+
+from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
-from dotenv import load_dotenv
 
 
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -68,7 +68,7 @@ def main():
 
     # Запускаем бота
     print("✅ Бот запущен!")
-    print("ℹ️  Нажмите Ctrl+X для остановки")
+    print("ℹ️  Нажмите Ctrl+Z для остановки")
 
     # Запускаем polling
     app.run_polling()
