@@ -68,7 +68,7 @@ def main():
 
     # Запускаем бота
     print("✅ Бот запущен!")
-    print("ℹ️  Нажмите Ctrl+C для остановки")
+    print("ℹ️  Нажмите Ctrl+X для остановки")
 
     # Запускаем polling
     app.run_polling()
