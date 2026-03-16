@@ -1,14 +1,12 @@
 
-from telegram import Update
 from telegram.ext import Application, CommandHandler
 
-from .config import Config 
+from .config import Config, logger
 from .handlers import BotHandlers
-
 
 def main():
     """Основная функция запуска бота"""
-    print("🚀 Запускаю бота-приветствие...")
+    logger.info("🚀 Запускаю бота-приветствие...")
 
     # Конфигурация бота
     config = Config()
@@ -25,8 +23,8 @@ def main():
     app.add_handler(CommandHandler("about", handlers.about_command))
 
     # Запускаем бота
-    print("✅ Бот запущен!")
-    print("ℹ️  Нажмите Ctrl+Z для остановки")
+    logger.info("✅ Бот запущен!")
+    logger.info("ℹ️  Нажмите Ctrl+Z для остановки")
 
     # Запускаем polling
     app.run_polling()
