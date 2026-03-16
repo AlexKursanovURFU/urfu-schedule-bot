@@ -14,6 +14,7 @@ packages = [
 python = "^3.12"
 python-telegram-bot = "^22.5"  # Обратите внимание на версию! v20.x — это последняя основная ветка с асинхронным API по умолчанию.
 python-dotenv = "1.2.1"
+loguru = "^0.7.3"
 
 # Группа зависимостей для разработки
 [tool.poetry.group.dev.dependencies]
