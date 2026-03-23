@@ -36,9 +36,8 @@ class DaySchedule:
     weekday: str
     lessons: list[Lesson]
 
-
+@dataclass
 class WeekSchedule:
     """Расписание на неделю."""
 
-    def __init__(self, days: list[DaySchedule]) -> None:
-        self.days = days
+    days: list[DaySchedule]
