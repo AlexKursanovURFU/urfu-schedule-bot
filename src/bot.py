@@ -5,9 +5,10 @@ from .config import Config, logger
 from .handlers import BotHandlers
 from .console_handler import ConsoleHandler
 
+
 def main():
     """Основная функция запуска бота"""
-    logger.info("🚀 Запускаю бота-приветствие...")
+    logger.info("🚀 Запускаю бота...")
 
     # Конфигурация бота
     config = Config()
@@ -23,17 +24,23 @@ def main():
     app.add_handler(CommandHandler("help", handlers.help_command))
     app.add_handler(CommandHandler("about", handlers.about_command))
     app.add_handler(CommandHandler("schedule", handlers.schedule_command))
+    app.add_handler(CommandHandler("setgroup", handlers.setgroup_command))
+    app.add_handler(CommandHandler("mygroup", handlers.mygroup_command))
+    app.add_handler(CommandHandler("cleargroup", handlers.cleargroup_command))
+    app.add_handler(CommandHandler("days", handlers.days_command))
+    app.add_handler(CommandHandler("groups", handlers.groups_command))
 
-    # Запускаем консольный обработчик
+    # Запускаем консольный обработчик (для управления из консоли)
     console = ConsoleHandler(app)
     console.start()
 
     # Запускаем бота
     logger.info("✅ Бот запущен!")
     logger.info("ℹ️  Для остановки введите 'stop' в консоли или нажмите Ctrl+C")
+    logger.info("📋 Доступные команды в Telegram: /start, /help, /about, /schedule, /setgroup, /mygroup, /cleargroup, /days")
 
     try:
-        # Запускаем polling
+        # Запускаем polling (бесконечный цикл получения обновлений)
         app.run_polling()
     except KeyboardInterrupt:
         logger.info("🛑 Получен сигнал остановки (Ctrl+C)")
@@ -41,6 +48,7 @@ def main():
     except Exception as e:
         logger.error(f"Ошибка при работе бота: {e}")
         sys.exit(1)
+
 
 if __name__ == "__main__":
     print(sys.executable)

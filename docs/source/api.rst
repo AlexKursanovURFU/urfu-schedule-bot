@@ -1,34 +1,39 @@
-API документация
+API Документация
 ================
 
-API клиент
-----------
+Модуль api_client
+-----------------
 
 .. automodule:: src.api_client
    :members:
    :undoc-members:
    :show-inheritance:
 
-Обработчики бота
-----------------
+Модуль handlers
+---------------
 
 .. automodule:: src.handlers
    :members:
    :undoc-members:
    :show-inheritance:
 
-Типы данных
------------
+Модуль database
+---------------
 
-.. automodule:: src.types
+.. automodule:: src.database.user_data
    :members:
    :undoc-members:
    :show-inheritance:
 
-Конфигурация
-------------
+Модуль services
+---------------
 
-.. automodule:: src.config
+.. automodule:: src.services.group_service
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: src.services.schedule_service
    :members:
    :undoc-members:
    :show-inheritance:
